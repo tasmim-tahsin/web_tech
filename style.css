@@ -1,0 +1,27 @@
+header{
+    text-align: center;
+}
+.maindiv{
+    display: flex;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 1200px;
+}
+.leftdiv{
+    width: 50%;
+}
+
+.rightdiv{
+    width: 50%;
+}
+.box{
+    border: 1px solid blue;
+    height: 50%;
+}
+.box3{
+    height: 70%;
+}
+.box4{
+    height: 30%;
+}
