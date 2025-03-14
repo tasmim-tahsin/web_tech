@@ -15,13 +15,23 @@ header{
 .rightdiv{
     width: 50%;
 }
-.box{
-    border: 1px solid blue;
+.box1{
+    border: 1px solid black;
+    background-color: bisque;
+    height: 50%;
+}
+.box2{
+    border: 1px solid black;
+    background-color: chocolate;
     height: 50%;
 }
 .box3{
+    border: 1px solid black;
+    background-color: cornflowerblue;
     height: 70%;
 }
 .box4{
+    border: 1px solid black;
+    background-color: darkcyan;
     height: 30%;
 }
