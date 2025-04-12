@@ -24,8 +24,8 @@
             <div class="rightdiv">
                 <div class="box3">
                     <h2 style=" text-align: center;">Registration Form</h2>
-                    <div>
-                        <form action="">
+                    <div class="formdiv">
+                        <form action="" id="registrationForm">
                             <div class="row">
                                 <div class="col25">
                                     <label for="fname">Full Name</label>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="col-75">
 
-                                    <input type="cpassword" name="cpassword" id="cpassword">
+                                    <input type="password" name="cpassword" id="cpassword">
                                 </div>
                             </div>
                             <div>
@@ -96,15 +96,15 @@
                                     </select>
                                 </div>
                             </div>
-                            <div>
-                                <div>
-                                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                    <label for="vehicle1"> Agree with our terms and conditions.</label>
+                           
+                                <div class="chkbx">
+                                    <input class="chk" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                    <p> Agree with our terms and conditions.</p>
 
                                 </div>
-                            </div>
-                            <div class="col-25">
-                                <input type="submit" value="Submit">
+                                <div id="errorMessages" style="color: red; margin-bottom: 10px;"></div>
+                            <div class="btn">
+                                <input type="submit" value="Submit" onclick="isValidate()">
                             </div>
                         </form>
                     </div>
@@ -114,5 +114,6 @@
             </div>
         </div>
     </main>
+    <script src="./form.js"></script>
 </body>
 </html>
