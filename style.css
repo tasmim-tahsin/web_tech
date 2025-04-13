@@ -7,8 +7,8 @@ header{
 }
 .maindiv{
     display: flex;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 25%;
+    margin-right: 25%;
     height: 1500px;
 }
 .leftdiv{
@@ -19,23 +19,23 @@ header{
     width: 50%;
 }
 .box1{
-    border: 1px solid black;
+    
     background-color: bisque;
     height: 50%;
 }
 .box2{
-    border: 1px solid black;
+    
     background-color: chocolate;
     height: 50%;
 }
 .box3{
-    border: 1px solid black;
+    
     background-color: white;
     height: 70%;
     margin: auto;
 }
 .box4{
-    border: 1px solid black;
+    
     background-color: darkcyan;
     height: 30%;
 }
@@ -46,7 +46,7 @@ header{
   justify-content: center;
 }
 #form {
-  width: 400px;
+  width: 300px;
   /*  */
   padding: 20px;
   background-color: whitesmoke;
@@ -71,11 +71,13 @@ header{
 
 .input-control {
   display: flex;
+  align-items:flex-start;
   flex-direction: column;
   margin: 10px;
+  padding-right: 10px;
 }
 
-.input-control input {
+.input-control input, select {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -100,4 +102,8 @@ header{
   color: #ff3860;
   font-size: 9px;
   height: 13px;
+}
+.termsdiv{
+  display: flex;
+  gap: 8px;
 }
