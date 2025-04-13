@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Air Quality Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
@@ -23,89 +26,54 @@
             
             <div class="rightdiv">
                 <div class="box3">
-                    <h2 style=" text-align: center;">Registration Form</h2>
-                    <div class="formdiv">
-                        <form action="" id="registrationForm">
-                            <div class="row">
-                                <div class="col25">
-                                    <label for="fname">Full Name</label>
-                                </div>
-                                <div class="col-75">
-                                    <input type="text" name="fname" id="fname" placeholder="Enter Your full name">
-                                </div>
+                    <div class="container">
+                        <form id="form" action="/">
+                            <h1>Registration</h1>
+                            <div class="input-control">
+                                <label for="username">Username</label>
+                                <input id="username" name="username" type="text">
+                                <div class="error"></div>
                             </div>
-                            <div class="row">
-                                <div class="col-25">
-                                    <label for="email">Email</label>
-                                </div>
-                                <div class="col-75">
-                                    <input type="email" name="email" id="email" placeholder="example@gmail.com">
-                                </div>
+                            <div class="input-control">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="text">
+                                <div class="error"></div>
                             </div>
-                            <div class="row">
-                                <div class="col-25">
-
-                                    <label for="password">Password</label>
-                                </div>
-                                <div class="col-75">
-
-                                    <input type="password" name="password" id="password">
-                                </div>
+                            <div class="input-control">
+                                <label for="password">Password</label>
+                                <input id="password"name="password" type="password">
+                                <div class="error"></div>
                             </div>
-                            <div>
-                                <div class="col25">
-
-                                    <label for="cpassword">Confirm Password</label>
-                                </div>
-                                <div class="col-75">
-
-                                    <input type="password" name="cpassword" id="cpassword">
-                                </div>
+                            <div class="input-control">
+                                <label for="password2">Password again</label>
+                                <input id="password2"name="password2" type="password">
+                                <div class="error"></div>
                             </div>
-                            <div>
-                                <div class="col-25">
-
-                                    <label for="location">Location</label>
-                                </div>
-                                <div class="col-75">
-
-                                    <input type="text" name="location" id="location">
-                                </div>
+                            <div class="input-control">
+                                <label for="location">Location</label>
+                                <input id="location"name="location" type="text">
+                                <div class="error"></div>
                             </div>
-                            <div>
-                                <div class="col-25">
-
-                                    <label for="zip">Zip Code</label>
-                                </div>
-                                <div class="col-75">
-
-                                    <input type="number" name="zip" id="zip">
-                                </div>
+                            <div class="input-control">
+                                <label for="zip">Zip Code</label>
+                                <input type="number" name="zip" id="zip">
+                                <div class="error"></div>
                             </div>
-                            <div>
-                                <div class="col-25">
-
-                                    <label for="cities">Preferred Cities</label>
-                                </div>
-                                <div class="col-75">
-                                    <select name="pcities" id="pcities" multiple size="">
-                                        <option value="Dhaka">Dhaka</option>
-                                        <option value="Delhi">Delhi</option>
-                                        <option value="London">London</option>
-                                        <option value="Istanbul">Istanbul</option>
-                                    </select>
-                                </div>
+                            <div class="input-control">
+                                <label for="cities">Preferred Cities</label>
+                                <select name="pcities" id="pcities" multiple size="">
+                                    <option value="Dhaka">Dhaka</option>
+                                    <option value="Delhi">Delhi</option>
+                                    <option value="London">London</option>
+                                    <option value="Istanbul">Istanbul</option>
+                                </select>
+                                <div class="error"></div>
                             </div>
-                           
-                                <div class="chkbx">
-                                    <input class="chk" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                    <p> Agree with our terms and conditions.</p>
-
-                                </div>
-                                <div id="errorMessages" style="color: red; margin-bottom: 10px;"></div>
-                            <div class="btn">
-                                <input type="submit" value="Submit" onclick="isValidate()">
+                            <div class="input-control">
+                                <input class="chk" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <p> Agree with our terms and conditions.</p>
                             </div>
+                            <button type="submit">Sign Up</button>
                         </form>
                     </div>
                     
