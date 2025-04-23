@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body{
     /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 header{
     text-align: center;
@@ -29,10 +31,16 @@ header{
     height: 50%;
 }
 .box3{
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
+    color: white;
     height: 70%;
-    margin: auto;
+    width: 100%;
+    background:url('https://codingstella.com/wp-content/uploads/2024/01/download-7.jpeg') no-repeat;
+    background-size:cover;
+    background-position:center;
 }
 .box4{
     
@@ -41,40 +49,54 @@ header{
 }
 .container{
   /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-  margin: auto 0 auto;
   display: flex;
-  justify-content: center;
+  justify-items: center;
+  position: relative;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,.5);
+  background: transparent;
+  box-shadow: 0 0 10 rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 10px;
 }
 #form {
-  width: 300px;
-  /*  */
-  padding: 20px;
-  background-color: whitesmoke;
-  border-radius: 4px;
+  width: 100%;
   font-size: 12px;
 }
 
 #form h1 {
-  color: #0f2027;
+
   text-align: center;
 }
 
 #form button {
-  padding: 10px;
+  /* padding: 10px;
   margin-top: 10px;
   width: 100%;
   color: white;
   background-color: rgb(41, 57, 194);
   border: none;
-  border-radius: 4px;
+  border-radius: 4px; */
+  width:80%;
+  height:40px;
+  background-color:#fff;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  font-size:1em;
+  color:#000;
+
+}
+.btndiv{
+  display: flex;
+  justify-content: center;
 }
 
 .input-control {
   display: flex;
-  align-items:flex-start;
+  align-items: start;
   flex-direction: column;
-  margin: 10px;
-  padding-right: 10px;
+  margin: 5px;
 }
 
 .input-control input, select {
@@ -83,7 +105,10 @@ header{
   display: block;
   font-size: 12px;
   padding: 10px;
-  width: 100%;
+  width: 250px;
+}
+.pcities{
+ 
 }
 
 .input-control input:focus {
