@@ -9,17 +9,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="AQI.css">
     
 </head>
 <body>
     <header>
-        <img style="width: 200px;;" src="./images/logo_AQI.jpg" alt="Header image">
-        <h1>Air Quality Index Project</h1>
+        <img style="width: 150px;;" src="./images/logo_AQI.jpg" alt="Header image">
+        <h1>Air Quality Index for Top Cities</h1>
     </header>
     <main>
         <div class="maindiv">
             <div class="leftdiv">
-                <div class="box1">Box 1
+                <div class="box1">
+                    <h2>AQI of Top 10 Cities</h2>
+                    <table id="table">
+                        <tr>
+                            <th>City</th>
+                            <th>AQI</th>
+                        </tr>
+                        <tr>
+                            <td>City 1</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 2</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 3</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 4</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 5</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 6</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 7</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 8</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 9</td>
+                            <td>AQI</td>
+                        </tr>
+                        <tr>
+                            <td>City 10</td>
+                            <td>AQI</td>
+                        </tr>
+                    </table>
                 </div>
                 <div class="box2">Box 2</div>
             </div>
@@ -27,36 +75,37 @@
             <div class="rightdiv">
                 <div class="box3">
                     <div class="container">
+                        <h1>Registration</h1>
                         <form id="form" action="/">
-                            <h1>Registration</h1>
+                            
                             <div class="input-control">
                                 <label for="username">Username</label>
-                                <input id="username" name="username" type="text">
+                                <input id="username" name="username" type="text" required>
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="text">
+                                <input id="email" name="email" type="text" required>
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="password">Password</label>
-                                <input id="password"name="password" type="password">
+                                <input id="password"name="password" type="password" required>
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="password2">Password again</label>
-                                <input id="password2"name="password2" type="password">
+                                <input id="password2"name="password2" type="password" required>
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="location">Location</label>
-                                <input id="location"name="location" type="text">
+                                <input id="location"name="location" type="text" required>
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="zip">Zip Code</label>
-                                <input type="number" name="zip" id="zip">
+                                <input type="number" name="zip" id="zip" required>
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
@@ -70,21 +119,42 @@
                                 <div class="error"></div>
                             </div>
                             <div class="termsdiv">
-                                <input class="chk" type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                <input class="chk" type="checkbox" id="agree" name="agree" value="agree">
                                 <p> Agree with our terms and conditions.</p>
+                                <div class="error"></div>
                             </div>
                             <div class="btndiv">
                                 <button type="submit">Sign Up</button>
                             </div>
-                            <div style="text-align: center; color: white;">
-                                <p>Already have an account? <a href="/index.html" style=" color: white;">Login Now</a></p>
+                            <div style="text-align: center;">
+                                <p>Already have an account? <a href="/index.html">Login Now</a></p>
                             </div>
                             
                         </form>
                     </div>
                     
                 </div>
-                <div class="box4">Box 4</div>
+                <div class="box4">
+                    <div class="logincontainer">
+                        <form action="" id="">
+                        <h1>Login</h1>
+                            <div class="input-control">
+                                <label for="username">Username</label>
+                                <input id="username" name="username" type="text">
+                                <div class="error"></div>
+                            </div>
+                            <div class="input-control">
+                                <label for="password">Password</label>
+                                <input id="password"name="password" type="password">
+                                <div class="error"></div>
+                            </div>
+                            <div class="btndiv">
+                                <button type="submit">Login</button>
+                            </div>
+                    </form>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </main>

@@ -1,0 +1,16 @@
+/* Table */
+#table{
+    border-collapse: collapse;
+    width: 70%;
+  }
+  #table td, #table th{
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  #table th{
+    background-color:#ff3860;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }

@@ -15,58 +15,70 @@ header{
 }
 .leftdiv{
     width: 50%;
+    margin-right: 5px;
 }
 
 .rightdiv{
     width: 50%;
 }
 .box1{
-    
-    background-color: bisque;
+    border: 1px solid #ff3860;
+    background-color:white;
     height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 10px;
 }
 .box2{
     
-    background-color: chocolate;
+    background-color: white;
     height: 50%;
+    border-radius: 10px;
+    border: 1px solid gold;
 }
 .box3{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: white;
-    color: white;
+    color: black;
     height: 70%;
     width: 100%;
-    background:url('https://codingstella.com/wp-content/uploads/2024/01/download-7.jpeg') no-repeat;
+    border: 1px solid gold;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    /* background:url("./images/background.jpg") no-repeat;
     background-size:cover;
-    background-position:center;
+    background-position:center; */
 }
 .box4{
     
-    background-color: darkcyan;
+    background-color: white;
     height: 30%;
+    border-radius: 10px;
+    border: 1px solid gold;
 }
 .container{
   /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-  display: flex;
-  justify-items: center;
   position: relative;
   border-radius: 10px;
-  border: 2px solid rgba(255,255,255,.5);
-  background: transparent;
+  /* border: 2px solid; */
+  /* border: 2px solid rgba(255,255,255,.5); */
+  /* background: transparent;
   box-shadow: 0 0 10 rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px); */
   padding: 10px;
 }
 #form {
   width: 100%;
-  font-size: 12px;
+  font-size: 0.8rem;
 }
 
 #form h1 {
 
-  text-align: center;
+  text-align: left;
 }
 
 #form button {
@@ -79,11 +91,11 @@ header{
   border-radius: 4px; */
   width:80%;
   height:40px;
-  background-color:#fff;
+  background-color:gold;
   border:none;
   border-radius:40px;
   cursor:pointer;
-  font-size:1em;
+  font-size:0.8rem;
   color:#000;
 
 }
@@ -113,10 +125,11 @@ header{
 
 .input-control input:focus {
   outline: 0;
+  border-color: cornflowerblue;
 }
 
 .input-control.success input {
-  border-color: #09c372;
+  /* border-color: #09c372; */
 }
 
 .input-control.error input {
@@ -131,4 +144,19 @@ header{
 .termsdiv{
   display: flex;
   gap: 8px;
+}
+
+.logincontainer{
+  display: flex;
+  justify-content: center;
+}
+.btndiv button{
+  width:80%;
+  height:40px;
+  background-color: #2196F3;
+  border:none;
+  border-radius:40px;
+  cursor:pointer;
+  font-size:0.8rem;
+  color: white;
 }
