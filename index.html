@@ -21,7 +21,8 @@
         <div class="maindiv">
             <div class="leftdiv">
                 <div class="box1">
-                    <h2>AQI of Top 10 Cities</h2>
+                    <h2 id="aqiHeading">AQI of Top 10 Cities</h2>
+                    <div id="aqiContainer"></div>
                     <table id="table">
                         <tr>
                             <th>City</th>
@@ -121,7 +122,7 @@
                                 <div class="error"></div>
                             </div>
                             <div class="btndiv">
-                                <input onsubmit="validateInput()" class="submitbtn1" type="submit" name="submit" value="Sign Up"></input>
+                                <input onsubmit="validateInput()" class="submitbtn1" type="submit" name="submit" value="Sign Up" onclick="showAQI()"></input>
                             </div>
                             <div style="text-align: center;">
                                 <p>Already have an account? <a href="#login">Login Now</a></p>

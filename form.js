@@ -173,3 +173,42 @@ function validateInputs (){
     }
     return isValid;
 };
+
+
+
+// AQI
+function showAQI() {
+    const select = document.getElementById('pcities');
+    const selectedOptions = Array.from(select.selectedOptions);
+    const container = document.getElementById('aqiContainer');
+    const table = document.getElementById('table');
+    const heading = document.getElementById('aqiHeading');
+
+    // Clear previous output
+    container.innerHTML = '';
+    table.innerHTML='';
+    heading.innerHTML='AQI of Selected Cities';
+
+    selectedOptions.forEach(option => {
+      const city = option.value;
+      const aqi = 50; // default AQI value
+
+      // Create aqi box
+      const box = document.createElement('div');
+      box.className = 'aqi-box';
+
+      // AQI value
+      const aqiValue = document.createElement('div');
+      aqiValue.className = 'aqi-value';
+      aqiValue.textContent = aqi;
+
+      // City name
+      const cityName = document.createElement('div');
+      cityName.className = 'city-name';
+      cityName.textContent = city;
+
+      box.appendChild(aqiValue);
+      box.appendChild(cityName);
+      container.appendChild(box);
+    });
+  }
