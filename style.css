@@ -14,7 +14,7 @@ header{
     display: flex;
     margin-left: 25%;
     margin-right: 25%;
-    height: 1500px;
+    height: 1200px;
 }
 .leftdiv{
     width: 50%;
@@ -76,7 +76,8 @@ header{
 }
 #form {
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 #form h1 {
@@ -84,7 +85,7 @@ header{
   text-align: left;
 }
 
-#form button {
+.submitbtn1{
   /* padding: 10px;
   margin-top: 10px;
   width: 100%;
@@ -153,8 +154,10 @@ header{
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
-.btndiv button{
+.btndiv .submitbtn2{
   width:80%;
   height:40px;
   background-color: #2196F3;

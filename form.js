@@ -1,3 +1,27 @@
+const cities = [
+    "Dhaka",
+    "New York",
+    "London",
+    "Tokyo",
+    "Paris",
+    "Toronto",
+    "Sydney",
+    "Dubai",
+    "Singapore",
+    "Istanbul"
+  ];
+
+  const citySelect = document.getElementById("pcities");
+
+  cities.forEach(function(city) {
+    const option = document.createElement("option");
+    option.value = city;
+    option.textContent = city;
+    citySelect.appendChild(option);
+
+  });
+
+
 const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
@@ -7,12 +31,6 @@ const locationInput = document.getElementById('location');
 const zip = document.getElementById('zipcode');
 const interestsSelect = document.getElementById('pcities');
 const checkbox = document.getElementById('agree');
-
-form.addEventListener('submit', e => {
-    e.preventDefault();
-    validateInputs();
-        
-});
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -51,34 +69,13 @@ const validateLocation = () => {
     }
 };
 
-const validateZipcode = () => {
-    const zipValue = zip.value.trim();
-    if (!/^\d{4,10}$/.test(zipValue)) {
-        setError(zip, 'Zipcode must be 4–10 digits');
-        return false;
-    } else {
-        setSuccess(zip);
-        return true;
-    }
-};
 
-const validateSelectedCities = () => {
-    const selectedOptions = [...interestsSelect.selectedOptions];
-    if (selectedOptions.length === 0) {
-        setError(interestsSelect, 'Please select at least one City');
-        return false;
-    } else {
-        setSuccess(interestsSelect);
-        return true;
-    }
-};
-
-
-const validateInputs = () => {
+function validateInputs (){
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
     const password2Value = password2.value.trim();
+    const selectedOptions = [...interestsSelect.selectedOptions];
 
 
     let isValid = true;
@@ -124,9 +121,9 @@ const validateInputs = () => {
     }
 
 
-    if (!validateLocation()) isValid = false;
-    if (!validateZipcode()) isValid = false;
-    if (!validateSelectedCities()) isValid = false;
+//     // if (!validateLocation()) isValid = false;
+//     // if (!validateZipcode()) isValid = false;
+//     // if (!validateSelectedCities()) isValid = false;
 
 //     if (locationInput.value.trim() === '') {
 //         setError(locationInput, 'Location is required');
@@ -135,7 +132,7 @@ const validateInputs = () => {
 //         setSuccess(locationInput);
 //     }
     
-//     // const zip = zipcodeInput.value.trim();
+//     const zip = zipcodeInput.value.trim();
 //     if (zip === '') {
 //         setError(zipcodeInput, 'Zipcode is required');
 //         isValid = false;
@@ -146,7 +143,7 @@ const validateInputs = () => {
 //         setSuccess(zipcodeInput);
 //     }
 
-//     const selectedOptions = [...interestsSelect.selectedOptions];
+    
 //     if (selectedOptions.length === 0) {
 //         setError(interestsSelect, 'Please select at least one City');
 //         isValid = false;
@@ -157,10 +154,22 @@ const validateInputs = () => {
     if (!checkbox.checked) {
         isValid = false;
     }
+    else{
+        setSuccess(checkbox);
+    }
+
+    const selectedCities = [...pcities.options].filter(option => option.selected);
+      if (selectedCities.length === 0) {
+        setError(interestsSelect, " Please select at least one city");
+        isValid = false;
+      }
+      else{
+        setSuccess(interestsSelect);
+      }
 
     if (isValid) {
         alert("Form submitted successfully!");
-        // form.submit();
-        form.reset();
+        console.log("Success");
     }
+    return isValid;
 };
