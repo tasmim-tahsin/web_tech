@@ -143,6 +143,8 @@ function validateInputs (){
       showAQI(selectedCities);
       console.log(selectedCities);
   }
+  
   return isValid;
+  //showAQI();
 };
 
