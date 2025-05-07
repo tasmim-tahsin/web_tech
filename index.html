@@ -21,9 +21,10 @@
         <div class="maindiv">
             <div class="leftdiv">
                 <div class="box1">
-                    <h2 id="aqiHeading">AQI of Top 10 Cities</h2>
+                    <h2 id="aqiHeading">AQI of 10 Cities</h2>
+                    <p id="registrationError"></p>
                     <div id="aqiContainer"></div>
-                    <table id="table">
+                    <!-- <table id="table">
                         <tr>
                             <th>City</th>
                             <th>AQI</th>
@@ -68,7 +69,7 @@
                             <td>City 10</td>
                             <td>AQI</td>
                         </tr>
-                    </table>
+                    </table> -->
                 </div>
                 <div class="box2">Box 2</div>
             </div>
@@ -111,14 +112,21 @@
                             </div>
                             <div class="input-control">
                                 <label for="cities">Preferred Cities</label>
-                                <select class="pcities" name="pcities[]" id="pcities" multiple size="">
+                                <select class="pcities" name="pcities[]" id="pcities" multiple size="5">
                                     
                                 </select>
                                 <div class="error"></div>
                             </div>
-                            <div class="termsdiv">
-                                <input class="chk" type="checkbox" id="agree" name="agree" value="agree">
-                                <p> Agree with our terms and conditions.</p>
+                            <div class="input-control">
+                                <label for="color">Select Color</label>
+                                <input id="color"name="color" type="color">
+                                <div class="error"></div>
+                            </div>
+                            <div >
+                                <div class="termsdiv">
+                                    <input class="chk" type="checkbox" id="agree" name="agree" value="agree">
+                                    <p> Agree with our terms and conditions.</p>
+                                </div>
                                 <div class="error"></div>
                             </div>
                             <div class="btndiv">
@@ -134,7 +142,7 @@
                 </div>
                 <div class="box4">
                     <div id="login">
-                        <form action="registration.php" id="" method="post">
+                        <form action="" id="" method="post">
                         <h1>Login</h1>
                         <div class="input-control">
                             <label for="email">Email</label>
@@ -160,5 +168,6 @@
         </div>
     </main>
     <script src="./form.js"></script>
+    <script src="./aqi.js"></script>
 </body>
 </html>
