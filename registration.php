@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = htmlspecialchars($_POST['password']); // You should not display password in real use
   $location = htmlspecialchars($_POST['location']);
   $cities = $_POST['pcities'];
+  $color = htmlspecialchars($_POST['color']);
 }
 ?>
 
@@ -32,7 +33,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="info">
     <p><strong>Email:</strong> <?php echo $email; ?></p>
     <p><strong>Location:</strong> <?php echo $location; ?></p>
+    <p><strong>Color:</strong> <?php echo $color; ?></p>
     <p><strong>Preferred Cities:</strong> <?php echo implode(", ", $cities); ?></p>
+  </div>
+  <div>
+    <button type="button"><a href="../web_tech/">Confirm</a></button>
   </div>
 
 </body>

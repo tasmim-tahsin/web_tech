@@ -20,7 +20,7 @@
     <main>
         <div class="maindiv">
             <div class="leftdiv">
-                <div class="box1">
+                <div class="box1" id="box1">
                     <h2 id="aqiHeading">AQI of 10 Cities</h2>
                     <p id="registrationError"></p>
                     <div id="aqiContainer"></div>
@@ -79,7 +79,7 @@
                     <div class="container">
                         <h1>Registration</h1>
                         <form id="form" action="registration.php" method="POST" onsubmit="return validateInputs()">
-                            
+ 
                             <div class="input-control">
                                 <label for="username">Full name</label>
                                 <input id="username" name="username" type="text">
@@ -119,12 +119,12 @@
                             </div>
                             <div class="input-control">
                                 <label for="color">Select Color</label>
-                                <input id="color"name="color" type="color">
+                                <input id="color-picker" name="color" type="color">
                                 <div class="error"></div>
                             </div>
                             <div >
                                 <div class="termsdiv">
-                                    <input class="chk" type="checkbox" id="agree" name="agree" value="agree">
+                                    <input class="chk" type="checkbox" id="agree" name="agree" value="agree" required>
                                     <p> Agree with our terms and conditions.</p>
                                 </div>
                                 <div class="error"></div>

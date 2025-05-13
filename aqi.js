@@ -41,6 +41,14 @@ function getAQIColorClass(aqi) {
   function showInitialAQI() {
     showAQI(cities);
   }
+
+  function showColor(){
+    const selectedColor=document.getElementById("color-picker");
+    const box= document.getElementById("box1");
+    box.style.backgroundColor =selectedColor.value;
+    // console.log(selectedColor);
+    // alert(selectedColor);
+  }
   
   // Run when page is loaded
   document.addEventListener("DOMContentLoaded", showInitialAQI);
