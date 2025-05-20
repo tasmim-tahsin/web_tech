@@ -137,9 +137,9 @@ function validateInputs (){
     }
 
   if (isValid) {
-      alert("Form submitted successfully!");
+      //alert("Form submitted successfully!");
       showColor();
-      console.log("Success");
+      //console.log("Success");
       const selectedCities = [...document.getElementById("pcities").selectedOptions].map(opt => opt.value);
       showAQI(selectedCities);
       console.log(selectedCities);

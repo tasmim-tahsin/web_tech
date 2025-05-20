@@ -24,7 +24,8 @@
  else{
     http_response_code(403);
     echo "<h3>Access Denied. You must submit the Registration form first.</h3>";
-    header("refresh: 0; url = errorpage.html");
+    // header("refresh: 0; url = errorpage.html");
+    header("Location: errorpage.html");
     exit;
  }
 
@@ -35,7 +36,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Confirm your registration</title>
-  <link rel="stylesheet" href="registration.css">
+  <link rel="stylesheet" href="./css/registration.css">
 </head>
 <body>
 

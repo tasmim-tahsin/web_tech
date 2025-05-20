@@ -5,7 +5,7 @@ if (isset($_POST["confirm"])) {
     // echo "Submitted";
     //print_r($_SESSION);
     
-    include 'database.php';
+    include './DB/database.php';
 
     // Get values from session
     $fullname = $_SESSION['fname'];
@@ -30,11 +30,11 @@ if (isset($_POST["confirm"])) {
         try {
             mysqli_query($conn, $sql);
             echo "User is now registered";
-            // remove all session variables
-            session_unset();
+            // // remove all session variables
+            // session_unset();
 
-            // destroy the session
-            session_destroy();
+            // // destroy the session
+            // session_destroy();
 
             header("refresh: 2; url = selectcities.php");
         } catch (mysqli_sql_exception) {

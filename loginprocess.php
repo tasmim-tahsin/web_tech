@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_POST["login"])) {
-    include 'database.php';
+    include './DB/database.php';
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -20,8 +20,10 @@ if (isset($_POST["login"])) {
             $_SESSION['user_id'] = $user['u_id'];
             $_SESSION['fname'] = $user['full_name'];
             $_SESSION['email'] = $user['email'];
+            // print_r($_SESSION);
 
             echo "Login successful!";
+            echo $_SESSION['user_id'];
             header("refresh: 2; url = selectcities.php"); // Change as needed
         } else {
             // Password does not match
