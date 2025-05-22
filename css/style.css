@@ -6,6 +6,7 @@ html{
 body{
     /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
     font-family: 'Montserrat', sans-serif;
+    background-color: white;
 }
 header{
     text-align: center;

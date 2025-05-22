@@ -30,13 +30,13 @@ if (isset($_POST["confirm"])) {
         try {
             mysqli_query($conn, $sql);
             echo "User is now registered";
-            // // remove all session variables
-            // session_unset();
+            // remove all session variables
+            session_unset();
 
-            // // destroy the session
-            // session_destroy();
+            // destroy the session
+            session_destroy();
 
-            header("refresh: 2; url = selectcities.php");
+            header("refresh: 2; url = index.html");
         } catch (mysqli_sql_exception) {
             echo "Could not register user";
         }
