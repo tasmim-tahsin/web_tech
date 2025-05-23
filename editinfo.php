@@ -5,7 +5,7 @@ include './DB/database.php';
 // Ensure user is logged in
 if (!isset($_SESSION['email'])) {
     echo "Unauthorized access.";
-    header("refresh: 2; url=index.html");
+    header("refresh: 0; url=errorpage.html");
     exit;
 }
 
@@ -85,14 +85,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border: 1px solid #ccc;
             border-radius: 6px;
         }
-        button {
-            background: #6c47ff;
+        .btndiv {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            /* justify-content: space-around; */
+            gap: 20px;
+        }
+
+        .btn2 {
+            padding: 10px 20px;
+            background-color: #e83159;
             color: white;
             border: none;
-            padding: 10px;
-            width: 100%;
-            font-weight: bold;
-            border-radius: 6px;
+            border-radius: 5px;
+            width:200px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn1 {
+            padding: 10px 20px;
+            background-color: #6c47ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
         }
         .msg {
             text-align: center;
@@ -122,8 +142,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <label>Upload Profile Photo</label>
     <input type="file" name="profile_photo" accept="image/*">
-
-    <button type="submit">Update</button>
+    
+    <div class="btndiv">
+        <a class="btn1" href="selectcities.php" >⬅ Back</a>
+        <button class="btn2" type="submit">
+      ↻
+       Update</button>
+    </div>
+    
 
     <div class="msg"><?php echo $updateMsg; ?></div>
 

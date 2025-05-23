@@ -10,11 +10,56 @@
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/AQI.css">
-    
+    <style>
+        body{
+            margin: 0;
+        }
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  width: 100%;
+}
+
+li {
+  display: inline-block;
+  padding: 10px;
+  /* float: right; */
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4c84ec;
+}
+    </style>
 </head>
 <body>
+        
     <header>
-        <img style="width: 150px; border-radius: 100%;" src="./images/logo_AQI.jpg" alt="Header image">
+        <ul>
+            <li><a class="active" href="./index.html">Home</a></li>
+            <li><a href="./selectcities.php">Select Cities</a></li>
+            <li><a href="./savecities.php">Save Cities</a></li>
+            <li><a href="./admin.php">Admin Login</a></li>
+        </ul>
+
+        <img style="width: 150px; border-radius: 100%; margin-top: 60px;" src="./images/logo_AQI.jpg" alt="Header image">
         <h1>Air Quality Index for Top Cities</h1>
     </header>
     <main>
@@ -24,52 +69,6 @@
                     <h2 id="aqiHeading">AQI of 10 Cities</h2>
                     <p id="registrationError"></p>
                     <div id="aqiContainer"></div>
-                    <!-- <table id="table">
-                        <tr>
-                            <th>City</th>
-                            <th>AQI</th>
-                        </tr>
-                        <tr>
-                            <td>City 1</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 2</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 3</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 4</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 5</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 6</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 7</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 8</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 9</td>
-                            <td>AQI</td>
-                        </tr>
-                        <tr>
-                            <td>City 10</td>
-                            <td>AQI</td>
-                        </tr>
-                    </table> -->
                 </div>
                 <div class="box2">Box 2</div>
             </div>

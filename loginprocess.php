@@ -22,9 +22,9 @@ if (isset($_POST["login"])) {
             $_SESSION['email'] = $user['email'];
             // print_r($_SESSION);
 
-            echo "Login successful!";
+            // echo "Login successful!";
             echo $_SESSION['user_id'];
-            header("refresh: 2; url = selectcities.php"); // Change as needed
+            header("Location: selectcities.php"); // Change as needed
         } else {
             // Password does not match
             echo "Incorrect password!";

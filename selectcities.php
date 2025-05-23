@@ -35,25 +35,62 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <title>Select Cities</title>
     <link rel="stylesheet" href="./css/selectcities.css">
+    <style>
+        body{
+            margin: 0;
+        }
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  width: 100%;
+}
+
+li {
+  display: inline-block;
+  padding: 10px;
+  /* float: right; */
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4c84ec;
+}
+    </style>
 </head>
 <body>
+     <ul>
+            <li><a  href="./index.html">Home</a></li>
+            <li><a class="active" href="./selectcities.php">Select Cities</a></li>
+            <li><a href="./savecities.php">Save Cities</a></li>
+            <li><a href="./admin.php">Admin Login</a></li>
+        </ul>
 <div>
-    <!-- <?php
-
-
-    ?>
-    <div>
-        <img src="./images/cat.png" alt="" srcset="" width="70px">
-    </div> -->
 
 
     <p style="text-align:center">
     
 <?php
-    echo '<div style="align: middle; margin:10px">';
+    echo '<div style="align: middle; margin-top:100px; margin-bottom:10px">';
 
     if (isset($_SESSION['profile_photo']) && file_exists($_SESSION['profile_photo'])) {
-        echo "<img src='{$_SESSION['profile_photo']}' alt='Profile Photo' style='width:80px; height:80px; border:2px solid green; border-radius:100%; vertical-align:middle;  margin-right:10px;'>";
+        echo "<img src='{$_SESSION['profile_photo']}' alt='Profile Photo' style='width:80px; height:80px; border:2px solid green; border-radius:100%; vertical-align:middle;'>";
     } else {
         echo '<div>
                 <img src="./images/cat.png" alt="Default Cat" width="70px">
