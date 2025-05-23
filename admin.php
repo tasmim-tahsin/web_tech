@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Admin Login</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6ff;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -77,9 +77,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             text-align: center;
             margin-top: 10px;
         }
+            ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index: 10;
+  text-align:center;
+  top: 0px;
+  width: 100%;
+}
+
+li {
+  display: inline-block;
+  padding: 10px;
+  /* float: right; */
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4c84ec;
+}
     </style>
 </head>
 <body>
+    <ul>
+            <li><a  href="./index.html">Home</a></li>
+            <li><a href="./selectcities.php">Select Cities</a></li>
+            <li><a href="./savecities.php">Save Cities</a></li>
+            <li><a class="active" href="./admin.php">Admin Login</a></li>
+        </ul>
 <div class="login-box">
     <h2>Admin Login</h2>
     <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>

@@ -4,9 +4,9 @@ html{
   scroll-behavior: smooth;
 }
 body{
-    /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-    font-family: 'Montserrat', sans-serif;
-    background-color: white;
+    font-family: 'Segoe UI', sans-serif;
+    background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     margin: 0;
 }
 header{
@@ -16,6 +16,7 @@ header{
     display: flex;
     margin-left: 25%;
     margin-right: 25%;
+    margin-bottom: 20px;
     height: 1200px;
 }
 .leftdiv{
@@ -38,10 +39,10 @@ header{
 }
 .box2{
     
-    background-color: white;
+    
     height: 50%;
     border-radius: 10px;
-    border: 1px solid gold;
+    /* border: 1px solid gold; */
 }
 .box3{
     display: flex;

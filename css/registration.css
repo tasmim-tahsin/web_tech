@@ -1,6 +1,7 @@
+
 body {
-      font-family: Arial, sans-serif;
-      
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f4f6ff;
     }
 #information {
       background: blueviolet;

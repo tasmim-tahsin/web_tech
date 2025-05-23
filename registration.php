@@ -39,7 +39,8 @@
   <!-- <link rel="stylesheet" href="./css/registration.css"> -->
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6ff;
       text-align:center;
       margin:0;
       

@@ -38,9 +38,9 @@ $users = mysqli_query($conn, "SELECT * FROM users");
     <title>Admin Dashboard</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 20px;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6ff;
         }
         h2 {
             color: #333;

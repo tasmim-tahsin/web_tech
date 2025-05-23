@@ -69,8 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Edit Info</title>
     <style>
         body {
-            font-family: Arial;
-            background-color: #f5f5ff;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6ff;
             padding: 30px;
         }
         form {
@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         input[type=password],
         input[type=file] {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             margin: 8px 0 16px;
             border: 1px solid #ccc;

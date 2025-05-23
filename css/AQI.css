@@ -1,4 +1,8 @@
 /* Table */
+body{
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f6ff;
+}
 #table{
     border-collapse: collapse;
     width: 70%;
