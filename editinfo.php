@@ -44,9 +44,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (in_array($imageFileType, $allowedTypes)) {
             if (move_uploaded_file($_FILES["profile_photo"]["tmp_name"], $target_file)) {
+                // Save path in session for immediate use
                 $_SESSION['profile_photo'] = $target_file;
+
+    // Also update the database with this path
+                $updatePhotoQuery = "UPDATE users SET profile_photo='$target_file' WHERE email='$email'";
+                mysqli_query($conn, $updatePhotoQuery);
+
                 $updateMsg .= "Profile photo uploaded.<br>";
-            } else {
+            }
+      else {
                 $updateMsg .= "Error uploading the file.<br>";
             }
         } else {

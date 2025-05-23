@@ -23,6 +23,14 @@ if (isset($_POST["login"])) {
             // print_r($_SESSION);
 
             // echo "Login successful!";
+            // After successful login:
+            $sql = "SELECT profile_photo FROM users WHERE email='$email'";
+            $result = mysqli_query($conn, $sql);
+            if ($result && mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION['profile_photo'] = $row['profile_photo'];
+            }
+
             echo $_SESSION['user_id'];
             header("Location: selectcities.php"); // Change as needed
         } else {

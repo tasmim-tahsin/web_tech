@@ -90,12 +90,13 @@ li a:hover:not(.active) {
     echo '<div style="align: middle; margin-top:100px; margin-bottom:10px">';
 
     if (isset($_SESSION['profile_photo']) && file_exists($_SESSION['profile_photo'])) {
-        echo "<img src='{$_SESSION['profile_photo']}' alt='Profile Photo' style='width:80px; height:80px; border:2px solid green; border-radius:100%; vertical-align:middle;'>";
+    echo "<img src='{$_SESSION['profile_photo']}' alt='Profile Photo' style='width:80px; height:80px; border:2px solid green; border-radius:100%; vertical-align:middle;'>";
     } else {
         echo '<div>
-                <img src="./images/cat.png" alt="Default Cat" width="70px">
-              </div>';
+            <img src="./images/cat.png" alt="Default Cat" width="70px">
+          </div>';
     }
+
 
     echo '</div>';
     if (isset($_SESSION["fname"])) {
