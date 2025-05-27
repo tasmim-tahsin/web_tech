@@ -2,7 +2,7 @@
 session_start();
 include './DB/database.php';
 
-// Ensure user is logged in
+// check user is logged in
 if (!isset($_SESSION['email'])) {
     echo "Unauthorized access.";
     header("refresh: 0; url=errorpage.html");

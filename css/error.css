@@ -1,12 +1,11 @@
 body {
   display: flex;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #f4f6ff;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
-  
 }
 
 .error-container {

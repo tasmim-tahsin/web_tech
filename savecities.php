@@ -1,11 +1,15 @@
 <?php
 session_start();
 include './DB/database.php';
-
+if (!isset($_SESSION['fname'])) {
+    echo "Please Login first to show data";
+    header("refresh: 2; url = index.php");
+    exit;
+}
 if (isset($_POST['cities'])) {
     if (count($_POST['cities']) > 10) {
         echo "Error: Please select up to 10 cities only.";
-        header("refresh: 3; url = selectcities.php");
+        header("refresh: 2; url = selectcities.php");
         exit;
     }
 
@@ -34,6 +38,7 @@ mysqli_close($conn);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Selected Cities</title>
@@ -67,11 +72,12 @@ mysqli_close($conn);
             color: white;
         }
 
-        th, td {
+        th,
+        td {
             padding: 15px 10px;
             text-align: center;
             font-size: 15px;
-            border-bottom:1px solid white;
+            border-bottom: 1px solid white;
         }
 
         /* tbody tr:nth-child(even) {
@@ -80,17 +86,17 @@ mysqli_close($conn);
 
         .green {
             background-color: green;
-            color:white;
+            color: white;
         }
 
         .orange {
             background-color: orange;
-            
+
         }
 
         .red {
             background-color: red;
-            color:white;
+            color: white;
         }
 
         .btn-container {
@@ -114,108 +120,156 @@ mysqli_close($conn);
         .btn:hover {
             background-color: #5935cc;
         }
+
+        body {
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            z-index: 10;
+            top: 0px;
+            width: 100%;
+        }
+
+        li {
+            display: inline-block;
+            padding: 10px;
+            /* float: right; */
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #4c84ec;
+        }
+        h2{
+            margin-top: 90px;
+        }
     </style>
 </head>
+
 <body>
+    <ul>
+        <li><a href="./index.php">Home</a></li>
+        <li><a href="./selectcities.php">Select Cities</a></li>
+        <li><a class="active" href="./savecities.php">Save Cities</a></li>
+        <li><a href="./admin.php">Admin Login</a></li>
+    </ul>
 
-<h2>Selected Cities & Air Quality Index</h2>
+    <h2>Selected Cities & Air Quality Index</h2>
 
-<table>
-    <thead>
-        <tr>
-            <th>City</th>
-            <th>Country</th>
-            <th>AQI & Grade</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        if (isset($_SESSION['selected_cities'])) {
-            foreach ($_SESSION['selected_cities'] as $city) {
-                $aqi = $city['aqi'];
+    <table>
+        <thead>
+            <tr>
+                <th>City</th>
+                <th>Country</th>
+                <th>AQI & Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if (isset($_SESSION['selected_cities'])) {
+                foreach ($_SESSION['selected_cities'] as $city) {
+                    $aqi = $city['aqi'];
 
-                // Grade & color
-                if ($aqi <= 50) {
-                    $class = 'green';
-                    $grade = 'Good';
-                } elseif ($aqi <= 70) {
-                    $class = 'orange';
-                    $grade = 'Moderate';
-                } else {
-                    $class = 'red';
-                    $grade = 'Unhealthy';
-                }
+                    // Grade & color
+                    if ($aqi <= 50) {
+                        $class = 'green';
+                        $grade = 'Good';
+                    } elseif ($aqi <= 70) {
+                        $class = 'orange';
+                        $grade = 'Moderate';
+                    } else {
+                        $class = 'red';
+                        $grade = 'Unhealthy';
+                    }
 
-                echo "<tr class='$class'>
+                    echo "<tr class='$class'>
                         <td>{$city['city_name']}</td>
                         <td>{$city['country']}</td>
                         <td>$aqi ($grade)</td>
                       </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='3'>No cities selected.</td></tr>";
             }
-        } else {
-            echo "<tr><td colspan='3'>No cities selected.</td></tr>";
-        }
-        ?>
-    </tbody>
-</table>
+            ?>
+        </tbody>
+    </table>
 
-<!-- Buttons -->
-<div class="btn-container">
-    <a href="selectcities.php" class="btn">⬅ Back</a>
-    <!-- <form action="save_selected_cities.php" method="post" style="display:inline;">
+    <!-- Buttons -->
+    <div class="btn-container">
+        <a href="selectcities.php" class="btn">⬅ Back</a>
+        <!-- <form action="save_selected_cities.php" method="post" style="display:inline;">
         <button type="submit" class="btn">💾 Save</button>
     </form> -->
-    <button onclick="exportTableToCSV('aqi_data.csv')" class="btn">📁 Export CSV</button>
-    <button onclick="exportTableToPDF()" class="btn">📄 Export PDF</button>
-</div>
+        <button onclick="exportTableToCSV('aqi_data.csv')" class="btn">📁 Export CSV</button>
+        <button onclick="exportTableToPDF()" class="btn">📄 Export PDF</button>
+    </div>
 
 
-<!-- Include jsPDF and autoTable from CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <!-- Include jsPDF and autoTable from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
 
-<script>
-function exportTableToCSV(filename) {
-    let csv = [];
-    const rows = document.querySelectorAll("table tr");
-    
-    for (let row of rows) {
-        const cols = row.querySelectorAll("td, th");
-        let rowData = [];
-        cols.forEach(col => rowData.push(col.innerText));
-        csv.push(rowData.join(","));
-    }
+    <script>
+        function exportTableToCSV(filename) {
+            let csv = [];
+            const rows = document.querySelectorAll("table tr");
 
-    const blob = new Blob([csv.join("\n")], { type: "text/csv" });
-    const link = document.createElement("a");
-    link.download = filename;
-    link.href = URL.createObjectURL(blob);
-    link.click();
-}
+            for (let row of rows) {
+                const cols = row.querySelectorAll("td, th");
+                let rowData = [];
+                cols.forEach(col => rowData.push(col.innerText));
+                csv.push(rowData.join(","));
+            }
 
-function exportTableToPDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    doc.text("Air Quality Report", 14, 15);
-
-    doc.autoTable({
-        html: 'table',
-        startY: 25,
-        theme: 'grid',
-        styles: {
-            halign: 'center'
-        },
-        headStyles: {
-            fillColor: [108, 71, 255]
+            const blob = new Blob([csv.join("\n")], { type: "text/csv" });
+            const link = document.createElement("a");
+            link.download = filename;
+            link.href = URL.createObjectURL(blob);
+            link.click();
         }
-    });
 
-    doc.save("aqi_report.pdf");
-}
-</script>
+        function exportTableToPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text("Air Quality Report", 14, 15);
+
+            doc.autoTable({
+                html: 'table',
+                startY: 25,
+                theme: 'grid',
+                styles: {
+                    halign: 'center'
+                },
+                headStyles: {
+                    fillColor: [108, 71, 255]
+                }
+            });
+
+            doc.save("aqi_report.pdf");
+        }
+    </script>
 
 
 </body>
-</html>
 
+</html>

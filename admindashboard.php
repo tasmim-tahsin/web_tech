@@ -30,7 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["action"])) {
 }
 
 $cities = mysqli_query($conn, "SELECT * FROM cities");
+$totalCities = mysqli_num_rows($cities);
 $users = mysqli_query($conn, "SELECT * FROM users");
+$totalUsers = mysqli_num_rows($users);
 ?>
 <!DOCTYPE html>
 <html>
@@ -134,7 +136,7 @@ $users = mysqli_query($conn, "SELECT * FROM users");
     </div>
 
     <div id="cities" class="section">
-        <h3>All Cities</h3>
+        <h3>Total Cities: <?php echo $totalCities?></h3>
         <table>
             <tr>
                 <th>ID</th>
@@ -154,7 +156,7 @@ $users = mysqli_query($conn, "SELECT * FROM users");
     </div>
 
     <div id="users" class="section">
-        <h3>All Users</h3>
+        <h3>Total Registered User: <?php echo $totalUsers?></h3>
         <table>
             <tr>
                 <th>ID</th>

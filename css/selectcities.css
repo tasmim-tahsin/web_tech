@@ -1,75 +1,102 @@
 body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f6ff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-.btndiv{
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-      
-    }
-    .btn1{
-      padding: 10px 20px;
-            background-color: #6c47ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-      
-    }
-    .btn2{
-            padding: 10px 20px;
-            background-color: #e83159;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-      
-    }
-    .btn3{
-            padding: 10px 20px;
-            background-color: #19be84;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: none;
-      
-    }
-    .city-item {
-            margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            display: flex;
-            
-        }
-        
-        .form{
-            display:flex;
-            flex-direction: column;
-            max-width:20%;
-            margin: auto;
-        }
-        .form .btn2{
-            float: right;
-        }
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f6ff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.btndiv {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.btn1 {
+  padding: 10px 20px;
+  background-color: #6c47ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn2 {
+  padding: 10px 20px;
+  background-color: #e83159;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn3 {
+  padding: 10px 20px;
+  background-color: #19be84;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.city-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+}
 
-.container{
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20%;
+  margin: auto;
+}
+.form .btn2 {
+  float: right;
+}
+
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  justify-items: center;  
+  justify-items: center;
 }
 
-        
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  width: 100%;
+}
+
+li {
+  display: inline-block;
+  padding: 10px;
+  /* float: right; */
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4c84ec;
+}

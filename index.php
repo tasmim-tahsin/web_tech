@@ -1,9 +1,10 @@
 <?php
-$bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#ffffff'; // default 
+$bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#f4f6ff'; // default 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,46 +16,48 @@ $bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#ffffff'; // defa
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/AQI.css">
     <style>
-        body{
+        body {
             margin: 0;
         }
+
         ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  z-index: 10;
-  top: 0px;
-  width: 100%;
-}
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            z-index: 10;
+            top: 0px;
+            width: 100%;
+        }
 
-li {
-  display: inline-block;
-  padding: 10px;
-  /* float: right; */
-}
+        li {
+            display: inline-block;
+            padding: 10px;
+            /* float: right; */
+        }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-li a:hover:not(.active) {
-  background-color: #111;
-}
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
 
-.active {
-  background-color: #4c84ec;
-}
+        .active {
+            background-color: #4c84ec;
+        }
     </style>
 </head>
+
 <body style="background-color: <?= htmlspecialchars($bgcolor) ?>;">
-        
+
     <header>
         <ul>
             <li><a class="active" href="./index.php">Home</a></li>
@@ -63,7 +66,8 @@ li a:hover:not(.active) {
             <li><a href="./admin.php">Admin Login</a></li>
         </ul>
 
-        <img style="width: 110px; border-radius: 100%; margin-top: 80px;" src="./images/logo_AQI.jpg" alt="Header image">
+        <img style="width: 110px; border-radius: 100%; margin-top: 80px;" src="./images/logo_AQI.jpg"
+            alt="Header image">
         <h1>Air Quality Index for Top Cities</h1>
     </header>
     <main>
@@ -78,13 +82,13 @@ li a:hover:not(.active) {
                     <img style="width:100%;border-radius: 10px;" src="./images/index.jpg" alt="" srcset="">
                 </div>
             </div>
-            
+
             <div class="rightdiv">
                 <div class="box3">
                     <div class="container">
                         <h1>Registration</h1>
                         <form id="form" action="registration.php" method="POST" onsubmit="return validateInputs()">
- 
+
                             <div class="input-control">
                                 <label for="username">Full name</label>
                                 <input id="username" name="username" type="text">
@@ -92,22 +96,22 @@ li a:hover:not(.active) {
                             </div>
                             <div class="input-control">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="text" >
+                                <input id="email" name="email" type="text">
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="password">Password</label>
-                                <input id="password"name="password" type="password">
+                                <input id="password" name="password" type="password">
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="password2">Password again</label>
-                                <input id="password2"name="password2" type="password">
+                                <input id="password2" name="password2" type="password">
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
                                 <label for="location">Location</label>
-                                <input id="location"name="location" type="text">
+                                <input id="location" name="location" type="text">
                                 <div class="error"></div>
                             </div>
                             <div class="input-control">
@@ -118,7 +122,7 @@ li a:hover:not(.active) {
                             <div class="input-control">
                                 <label for="cities">Preferred Cities</label>
                                 <select class="pcities" name="pcities[]" id="pcities" multiple size="5">
-                                    
+
                                 </select>
                                 <div class="error"></div>
                             </div>
@@ -127,7 +131,7 @@ li a:hover:not(.active) {
                                 <input id="color-picker" name="color" type="color">
                                 <div class="error"></div>
                             </div>
-                            <div >
+                            <div>
                                 <div class="termsdiv">
                                     <input class="chk" type="checkbox" id="agree" name="agree" value="agree" required>
                                     <p> Agree with our terms and conditions.</p>
@@ -135,25 +139,26 @@ li a:hover:not(.active) {
                                 <div class="error"></div>
                             </div>
                             <div class="btndiv">
-                                <input onsubmit="validateInput()" class="submitbtn1" type="submit" name="submit" value="Sign Up"></input>
+                                <input onsubmit="validateInput()" class="submitbtn1" type="submit" name="submit"
+                                    value="Sign Up"></input>
                             </div>
                             <div style="text-align: center;">
                                 <p>Already have an account? <a href="#login">Login Now</a></p>
                             </div>
-                            
+
                         </form>
                     </div>
-                    
+
                 </div>
                 <div class="box4">
                     <div id="login">
                         <form action="loginprocess.php" id="" method="post">
-                        <h1>Login</h1>
-                        <div class="input-control">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="text" required >
-                            <div class="error"></div>
-                        </div>
+                            <h1>Login</h1>
+                            <div class="input-control">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="text" required>
+                                <div class="error"></div>
+                            </div>
                             <div class="input-control">
                                 <label for="password">Password</label>
                                 <input id="password" name="password" type="password" required>
@@ -165,9 +170,9 @@ li a:hover:not(.active) {
                             <div style="text-align: center;">
                                 <p>Forget password? <a href="#login">Reset now</a></p>
                             </div>
-                    </form>
+                        </form>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -175,4 +180,5 @@ li a:hover:not(.active) {
     <script src="./JS/form.js"></script>
     <script src="./JS/aqi.js"></script>
 </body>
+
 </html>

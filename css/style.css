@@ -1,72 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-html{
+html {
   scroll-behavior: smooth;
 }
-body{
-    font-family: 'Segoe UI', sans-serif;
-    /* background: #EEAECA; */
-    /* background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
-    margin: 0;
+body {
+  font-family: "Segoe UI", sans-serif;
+  /* background: #EEAECA; */
+  /* background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
+  margin: 0;
 }
-header{
-    text-align: center;
+header {
+  text-align: center;
 }
-.maindiv{
-    display: flex;
-    margin-left: 25%;
-    margin-right: 25%;
-    margin-bottom: 20px;
-    height: 1200px;
+.maindiv {
+  display: flex;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 100px;
+  height: 1200px;
 }
-.leftdiv{
-    width: 50%;
-    margin-right: 5px;
+.leftdiv {
+  width: 50%;
+  margin-right: 10px;
 }
 
-.rightdiv{
-    width: 50%;
+.rightdiv {
+  width: 50%;
 }
-.box1{
-    border: 1px solid #ff3860;
-    background-color:white;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5px;
-    border-radius: 10px;
+.box1 {
+  /* border: 2px solid #ff3860; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  background-color: white;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+  border-radius: 10px;
 }
-.box2{
-    
-    
-    height: 50%;
-    border-radius: 10px;
-    /* border: 1px solid gold; */
+.box2 {
+  height: 50%;
+  border-radius: 10px;
+  /* border: 1px solid gold; */
 }
-.box3{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-    color: black;
-    height: 70%;
-    width: 100%;
-    border: 1px solid gold;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    /* background:url("./images/background.jpg") no-repeat;
+.box3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  color: black;
+  height: 70%;
+  width: 100%;
+  /* border: 2px solid #ff3860; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  /* background:url("./images/background.jpg") no-repeat;
     background-size:cover;
     background-position:center; */
 }
-.box4{
-    
-    background-color: white;
-    height: 30%;
-    border-radius: 10px;
-    border: 1px solid gold;
+.box4 {
+  background-color: white;
+  height: 30%;
+  border-radius: 10px;
+  /* border: 2px solid #2196f3; */
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
-.container{
+.container {
   /* background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
   position: relative;
   border-radius: 10px;
@@ -79,16 +79,16 @@ header{
 }
 #form {
   width: 100%;
-  font-size: 0.7rem;
+  color: rgb(61, 61, 61);
+  font-size: 0.8rem;
   font-weight: 600;
 }
 
 #form h1 {
-
   text-align: left;
 }
 
-.submitbtn1{
+.submitbtn1 {
   /* padding: 10px;
   margin-top: 10px;
   width: 100%;
@@ -96,17 +96,17 @@ header{
   background-color: rgb(41, 57, 194);
   border: none;
   border-radius: 4px; */
-  width:80%;
-  height:40px;
-  background-color:gold;
-  border:none;
-  border-radius:40px;
-  cursor:pointer;
-  font-size:0.8rem;
-  color:#000;
-
+  width: 80%;
+  height: 40px;
+  background-color: gold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #000;
+  font-weight: 500;
 }
-.btndiv{
+.btndiv {
   display: flex;
   justify-content: center;
 }
@@ -118,7 +118,8 @@ header{
   margin: 5px;
 }
 
-.input-control input, select {
+.input-control input,
+select {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
@@ -147,27 +148,32 @@ header{
   font-size: 9px;
   height: 13px;
 }
-.termsdiv{
+.input-control .pcities {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(61, 61, 61);
+}
+.termsdiv {
   display: flex;
   gap: 8px;
 }
 
-#login{
+#login {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
+  color: rgb(61, 61, 61);
 }
-.btndiv .submitbtn2{
-  width:80%;
-  height:40px;
-  background-color: #2196F3;
-  border:none;
-  border-radius:40px;
-  cursor:pointer;
-  font-size:0.8rem;
+.btndiv .submitbtn2 {
+  width: 80%;
+  height: 40px;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
   color: white;
+  font-weight: 500;
 }
-
-
