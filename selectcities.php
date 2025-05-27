@@ -9,7 +9,7 @@ if (isset($_SESSION['fname'])) {
 } else {
     http_response_code(403);
     echo "Access Denied. You must login first.";
-    header("refresh: 2; url = index.html");
+    header("refresh: 2; url = index.php");
     exit;
 }
 
@@ -76,7 +76,7 @@ li a:hover:not(.active) {
 </head>
 <body>
      <ul>
-            <li><a  href="./index.html">Home</a></li>
+            <li><a  href="./index.php">Home</a></li>
             <li><a class="active" href="./selectcities.php">Select Cities</a></li>
             <li><a href="./savecities.php">Save Cities</a></li>
             <li><a href="./admin.php">Admin Login</a></li>

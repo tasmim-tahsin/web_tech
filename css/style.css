@@ -5,8 +5,8 @@ html{
 }
 body{
     font-family: 'Segoe UI', sans-serif;
-    background: #EEAECA;
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    /* background: #EEAECA; */
+    /* background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); */
     margin: 0;
 }
 header{

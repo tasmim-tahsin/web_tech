@@ -162,7 +162,6 @@ $users = mysqli_query($conn, "SELECT * FROM users");
                 <th>Email</th>
                 <th>Location</th>
                 <th>Zip</th>
-                <th>Color</th>
             </tr>
             <?php while ($row = mysqli_fetch_assoc($users)): ?>
             <tr>
@@ -171,7 +170,6 @@ $users = mysqli_query($conn, "SELECT * FROM users");
                 <td><?= $row['email'] ?></td>
                 <td><?= $row['location'] ?></td>
                 <td><?= $row['zip'] ?></td>
-                <td><?= $row['color'] ?></td>
             </tr>
             <?php endwhile; ?>
         </table>
@@ -188,7 +186,7 @@ $users = mysqli_query($conn, "SELECT * FROM users");
             message.style.display = 'none';
             
         }
-        }, 3000); // 5000 milliseconds = 5 seconds
+        }, 3000);
     </script>
 </body>
 </html>

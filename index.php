@@ -1,3 +1,7 @@
+<?php
+$bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#ffffff'; // default 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,11 +53,11 @@ li a:hover:not(.active) {
 }
     </style>
 </head>
-<body>
+<body style="background-color: <?= htmlspecialchars($bgcolor) ?>;">
         
     <header>
         <ul>
-            <li><a class="active" href="./index.html">Home</a></li>
+            <li><a class="active" href="./index.php">Home</a></li>
             <li><a href="./selectcities.php">Select Cities</a></li>
             <li><a href="./savecities.php">Save Cities</a></li>
             <li><a href="./admin.php">Admin Login</a></li>

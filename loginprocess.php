@@ -20,6 +20,9 @@ if (isset($_POST["login"])) {
             $_SESSION['user_id'] = $user['u_id'];
             $_SESSION['fname'] = $user['full_name'];
             $_SESSION['email'] = $user['email'];
+            // $color = $user['color'];
+            // setcookie('bgcolor', $color, time() + (30 * 24 * 60 * 60), "/");
+
             // print_r($_SESSION);
 
             // echo "Login successful!";
@@ -36,12 +39,12 @@ if (isset($_POST["login"])) {
         } else {
             // Password does not match
             echo "Incorrect password!";
-            header("refresh: 2; url = index.html");
+            header("refresh: 2; url = index.php");
         }
     } else {
         // Email not found
         echo "Email not found!";
-        header("refresh: 2; url = index.html");
+        header("refresh: 2; url = index.php");
     }
 
     mysqli_close($conn);

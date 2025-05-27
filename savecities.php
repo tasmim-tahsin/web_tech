@@ -1,34 +1,36 @@
 <?php
 session_start();
-
-if (!isset($_POST['cities']) || count($_POST['cities']) > 10) {
-    echo "Error: Please select up to 10 cities only.";
-    header("refresh: 3; url = selectcities.php");
-    exit;
-}
-
 include './DB/database.php';
 
-$selectedCityIDs = $_POST['cities'];
-$cityData = [];
-
-// Prepare IDs for SQL (safe way using IN clause)
-$idList = implode(",", array_map('intval', $selectedCityIDs));
-$sql = "SELECT city_name, country, aqi FROM cities WHERE id IN ($idList)";
-$result = mysqli_query($conn, $sql);
-
-if ($result && mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        $cityData[] = $row;
+if (isset($_POST['cities'])) {
+    if (count($_POST['cities']) > 10) {
+        echo "Error: Please select up to 10 cities only.";
+        header("refresh: 3; url = selectcities.php");
+        exit;
     }
-    $_SESSION['selected_cities'] = $cityData;
-} else {
-    echo "No city data found.";
-    exit;
+
+    $selectedCityIDs = $_POST['cities'];
+    $cityData = [];
+
+    // Prepare IDs for SQL (safe way using IN clause)
+    $idList = implode(",", array_map('intval', $selectedCityIDs));
+    $sql = "SELECT city_name, country, aqi FROM cities WHERE id IN ($idList)";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $cityData[] = $row;
+        }
+        $_SESSION['selected_cities'] = $cityData;
+    } else {
+        echo "No city data found.";
+        exit;
+    }
 }
 
 mysqli_close($conn);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
