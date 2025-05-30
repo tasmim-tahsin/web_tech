@@ -16,6 +16,7 @@ $bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#f4f6ff'; // defa
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/AQI.css">
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
     <style>
         body {
             margin: 0;
