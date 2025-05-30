@@ -168,7 +168,7 @@ $bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#f4f6ff'; // defa
                                 <input class="submitbtn2" type="submit" name="login" value="Login"></input>
                             </div>
                             <div style="text-align: center;">
-                                <p>Forget password? <a href="#login">Reset now</a></p>
+                                <p>Forget password? <a href="resetpassword.php">Reset now</a></p>
                             </div>
                         </form>
                     </div>
