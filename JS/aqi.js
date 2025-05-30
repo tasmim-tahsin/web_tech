@@ -14,7 +14,7 @@ function getAQIColorClass(aqi) {
     const heading = document.getElementById('aqiHeading');
   
     container.innerHTML = '';
-    heading.innerHTML = 'AQI of Selected Cities';
+    heading.innerHTML = 'AQI of Top 10 Cities';
   
     cityList.forEach(city => {
         const aqi = Math.floor(Math.random() * 320);

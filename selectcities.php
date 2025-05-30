@@ -64,7 +64,11 @@ mysqli_close($conn);
 
             echo '</div>';
             if (isset($_SESSION["fname"])) {
-                echo "Username: <b style=\"color:green\">" . $_SESSION["fname"] . "</b><br>";
+                echo "Full Name: <b style=\"color:green\">" . $_SESSION["fname"] . "</b><br>";
+            }
+            echo '</div>';
+            if (isset($_SESSION["email"])) {
+                echo "Email: <b style=\"color:green\">" . $_SESSION["email"] . "</b><br>";
             }
 
             ?>

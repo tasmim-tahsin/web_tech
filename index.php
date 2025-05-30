@@ -15,6 +15,7 @@ $bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#f4f6ff'; // defa
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/AQI.css">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <style>
         body {
             margin: 0;
@@ -176,9 +177,27 @@ $bgcolor = isset($_COOKIE['bgcolor']) ? $_COOKIE['bgcolor'] : '#f4f6ff'; // defa
                 </div>
             </div>
         </div>
+        <!-- Accept Cookie -->
+        <div class="wrapper">
+      <header>
+        <i class="bx bx-cookie"></i>
+        <h2>Cookies Consent</h2>
+      </header>
+
+      <div class="data">
+        <p>This website use cookies to help you have a superior and more relevant browsing experience on the website. <a href="#"> Read more...</a></p>
+      </div>
+
+      <div class="buttons">
+        <button class="button" id="acceptBtn">Accept</button>
+        <button class="button" id="declineBtn">Decline</button>
+      </div>
+    </div>
     </main>
     <script src="./JS/form.js"></script>
     <script src="./JS/aqi.js"></script>
+    <script src="./JS/cookie.js" defer>
+    </script>
 </body>
 
 </html>
